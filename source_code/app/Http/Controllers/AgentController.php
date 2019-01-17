@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Lead;
+use Session;
+use DB;
+
+class AgentController extends Controller
+{
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function dashboard()
+	{
+		return view('agents.dashboard');
+	}
+
+	public function login()
+	{
+		return view('agents.login');
+	}
+
+	public function agentlogin(Request $Request)
+	{
+		$this->validate($Request,[
+    								'email'		=>	'required|email',
+    								'password'	=>	'required'
+    							]);
+    	if(Auth::attempt(['email'=>$Request->email,'password'=>$Request->password]))
+    	{
+            $Request->session()->put('agent_name',Auth::user()->name);
+            $Request->session()->put('join_date',Auth::user()->created_at);
+            return redirect("/agent");	 
+    	}
+    	else
+    	{
+    	   	return redirect("/agent/login")->withInput($Request->input())->with('message','Invalid username or password!');
+    	}   
+	}
+
+	public function logout()
+    {
+        session()->forget('agent_name');
+        session()->forget('join_date');
+    	Auth::logout();
+      	return redirect("/agent/login")->with('messagelo','Successfully logged out!');
+    }
+
+    public function list_leads()
+    {
+        $arrLeads           = Lead::select('id','first_name','last_name',
+                                'email','phone','home_area','created_at')
+                                ->orderBy('created_at','DESC')
+                                ->get();
+
+    	return view('agents.leads',['arrLeads'=>$arrLeads]);
+    }
+
+    public function lead_details($id)
+    {
+        $arrLead            = Lead::find($id);
+        return view('agents.lead_details',['arrLead'=>$arrLead]);
+    }
+}

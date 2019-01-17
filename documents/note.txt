@@ -1,0 +1,36 @@
+Pending sections
+
+Admin interface
+-------------------------
+Need to do the admin interface so we can manage the leads before getting to agent interface.
+Check for duplicate lead,fake lead etc admin admin can approve the leads according to it.
+We need to show only admin approved leads to agent side
+
+Time zone conversion
+-----------------------------------
+Need to make all leads to a common time zone(UTC) So we can make sure the excat date of 
+registration of the lead when it is considered globaly.
+
+Setting unique Lead ID
+-----------------------------------
+By setting a unique lead id (depending on the session), we can avoid the duplicate leads, robot generated 
+leads etc with respect to the IP address.We can set a unique id when a visitor visits the campaign page and 
+thus redirected to the landing page.Or otherwise we have to check for duplicate lead details when a user submitting the form.This may take time for 
+saving the process. Or in admin side we have to check for the duplicate leads automatically or manualy.
+
+Incompleted form or quiting the page before submitting the data
+----------------------------------------------------------------------------------------
+This section is not completed and I will do it as early as possible.
+
+Set the campaign Id
+---------------------------
+Campaign id must be saved and for that we need to get the id when a user is redirected to the landing 
+page through the campaign. In current code ,I have hard coded the campaign id as 4 and saving it in the 
+database.While generating the report and taking weekly or monthly analysis, we can understand through which
+campaign we got more leads
+
+Dashboard
+----------------
+Need to show the number of leads with different status
+
+

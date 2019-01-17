@@ -1,0 +1,13 @@
+Front end
+-------------------
+To access the landing page please use the below url
+http://localhost:8000/
+
+Agent side
+-------------------
+To access the agents interface please use the url:
+
+localhost:8000/agent
+Username:testagent@lms.com
+Password:123456
+
