@@ -17,6 +17,7 @@
 Route::get('/','LeadController@leadform');
 Route::post('/save-lead','LeadController@save_lead');
 Route::post('/ajax-save-lead','LeadController@ajax_save_lead');
+Route::post('/ajax-save-incomplete-lead','LeadController@save_incomplete_lead');
 
 Route::group(array('middleware'=>'auth'),function()
 {
