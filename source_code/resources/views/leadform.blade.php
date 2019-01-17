@@ -147,6 +147,21 @@
 @endsection
 @push('scripts')
 <script type="text/javascript">
+    $(document).ready(function(){
+        //Ajax function for saving incompleted form datas
+        $(document).mouseleave(function () {
+            $.ajax({
+                    type    : "POST",
+                    url     : '/ajax-save-incomplete-lead',
+                    data    : $('#form1').serialize(),
+                    success : function(dat)
+                    {}
+                });
+
+        });
+
+    })
+
     $(document).ready(function (){
 
         $('#save').click(function(e){
