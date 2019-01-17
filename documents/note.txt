@@ -34,3 +34,29 @@ Dashboard
 Need to show the number of leads with different status
 
 
+
+Changes completed on 17/01/2019
+-------------------------------------------------------
+
+Agent side dashboard
+--------------------------------
+Completed the agent side dashboard for showing total leads,admin approved leads,approval pending leads,
+duplicate leads.
+
+New lead_id is implementd
+_______________________
+A session id is also added in the form to uniquely identify the leads is implemented.Using this concept, we can
+avoid duplicate leads,unauthorized insertion of lead data,insertion through robotic methods etc.
+
+
+Saving the incompleted lead form data
+----------------------------------------------------------
+This is done by calling an ajax function on mouseleave event . When mouse leaves the document area, the 
+available data in the form is saved along with lead_id(session value, newly implemented),ip address,and with
+status as 'I' (incomplete).
+
+Next time if mouse leaves the document area,system checks for the lead_id in the database,if lead_id exists,
+the corresponding lead will be modified.
+
+
+
