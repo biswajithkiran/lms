@@ -23,7 +23,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Total Leads</span>
-              <span class="info-box-number">9</span>
+              <span class="info-box-number">{{$tot_leads}}</span>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Completed Insertions</span>
-              <span class="info-box-number">5</span>
+              <span class="info-box-number">{{$ver_leadcount}}</span>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Duplicate Leads</span>
-              <span class="info-box-number">6</span>
+              <span class="info-box-number">{{$dup_leadcount}}</span>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Pending Insertiions</span>
-              <span class="info-box-number">3</span>
+              <span class="info-box-number">{{$pen_leadcount}}</span>
             </div>
           </div>
         </div>
