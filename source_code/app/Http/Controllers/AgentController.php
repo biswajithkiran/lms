@@ -18,7 +18,19 @@ class AgentController extends Controller
 
     public function dashboard()
 	{
-		return view('agents.dashboard');
+		$tot_leads          = Lead::count();
+        $ver_leads          = Lead::where('status','=','V')
+                                    ->get();
+        $ver_leadcount      = $ver_leads->count();
+
+        $pen_leads          = Lead::where('status','=','P')
+                                    ->get();
+        $pen_leadcount      = $pen_leads->count();
+
+        $dup_leads          = Lead::where('status','=','D')
+                                    ->get();
+        $dup_leadcount      = $dup_leads->count();
+        return view('agents.dashboard',['tot_leads'=>$tot_leads,'ver_leadcount'=>$ver_leadcount,'pen_leadcount'=>$pen_leadcount,'dup_leadcount'=>$dup_leadcount]);
 	}
 
 	public function login()
