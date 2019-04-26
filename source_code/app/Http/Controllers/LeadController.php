@@ -161,4 +161,9 @@ class LeadController extends Controller
         $new_str->setTimeZone(new DateTimeZone('UTC'));
         return $new_str->format( $format);
     }
+	
+	public function lead_report()
+	{
+		echo "This is the leads report page!!";
+	}
 }
