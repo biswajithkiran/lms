@@ -42,7 +42,7 @@
             <i class="fa fa-dashboard" aria-hidden="true"></i> <span>Dashboard</span>
           </a></li>     
         <li><a href="{{URL('/agent/leads')}}"><i class="fa fa-diamond" aria-hidden="true"></i> <span>Manage Leads</span></a></li>
-		<li><a href="#"><i class="fa fa-diamond" aria-hidden="true"></i> <span>Report</span></a></li>
+		<li><a href="{{URL('/agent/reports')}}"><i class="fa fa-diamond" aria-hidden="true"></i> <span>Report</span></a></li>
         <li><a href="{{URL('/agent/logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> <span>Logout</span></a></li>
         <!-- <li class="treeview">
           <a href="#">
