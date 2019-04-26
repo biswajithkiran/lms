@@ -26,6 +26,7 @@ Route::group(array('middleware'=>'auth'),function()
 
 	Route::get('/agent/leads','AgentController@list_leads');
 	Route::get('/leads/detail_view/{id}','AgentController@lead_details');
+	Route::get('/agent/reports','LeadController@lead_report');
 });
 Route::get('/agent/login','AgentController@login');
 Route::post('/agent/agentlogin','AgentController@agentlogin');
